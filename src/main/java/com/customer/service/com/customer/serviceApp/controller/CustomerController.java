@@ -18,6 +18,12 @@ public class CustomerController {
 
         return "Hello Customers";
     }
+    
+    @GetMapping(value = "/")
+    public ResponseEntity<String> hello(){
+
+        return new ResponseEntity<String>("Success", HttpStatus.OK);
+    }
 
     @PostMapping("/all")
     public ResponseEntity<List<Customer>> getAllCustomer(){
