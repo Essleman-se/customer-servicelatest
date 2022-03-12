@@ -3,8 +3,8 @@ package com.customer.service.com.customer.serviceApp.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Data
-@AllArgsConstructor
+//@Data
+//@AllArgsConstructor
 public class Customer {
 	
 	private String custId;
