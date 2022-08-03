@@ -1,8 +1,7 @@
 package com.customer.service.com.customer.serviceApp.controller;
 
 
-import com.customer.service.com.customer.serviceApp.exception.ApplicationException;
-import com.customer.service.com.customer.serviceApp.exception.CustomerNotFoundException;
+import com.customer.service.com.customer.serviceApp.exception.ApiRequestException;
 import com.customer.service.com.customer.serviceApp.model.Customer;
 import com.customer.service.com.customer.serviceApp.repository.CustomerRepository;
 import com.customer.service.com.customer.serviceApp.service.CustomerService;
@@ -54,7 +53,7 @@ public class CustomerController {
     public ResponseEntity<Customer> findById(@PathVariable Integer id){
         Optional<Customer> customer = customerService.getCustById(id);
         if (!customer.isPresent()){
-            throw new CustomerNotFoundException("Customer Not Found");
+            throw new ApiRequestException("Oops Customer NOT FOUND");
         }
 
         return new ResponseEntity(customer, HttpStatus.OK);
@@ -78,13 +77,13 @@ public class CustomerController {
 
         log.info("CustemerService - update");
         if (customer.getId() == null) {
-            throw new ApplicationException("Customer ID not found, ID is required for update the data");
+            throw new ApiRequestException("Oops Customer ID not found, ID is required for update the data");
         } else {
             Customer updatedCustomer = customerService.saveOrUpdate(customer);
             return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
         }
     }
-    @PatchMapping("{id}")
+    @PatchMapping("/{id}")
     public ResponseEntity<Customer> patch(@PathVariable Integer id,
                                           @RequestBody Map<Object, Object> fields) {
         Optional<Customer> cust = customerService.getCustById(id);
@@ -105,7 +104,7 @@ public class CustomerController {
     public ResponseEntity<String> deleteById(@PathVariable Integer id){
         Optional<Customer> customer = customerService.getCustById(id);
         if (!customer.isPresent()){
-            throw new CustomerNotFoundException("Customer Not Found");
+            throw new ApiRequestException("Oops Customer NOT FOUND");
         }
 
         return new ResponseEntity<>(customerService.deleteById(id), HttpStatus.OK);
