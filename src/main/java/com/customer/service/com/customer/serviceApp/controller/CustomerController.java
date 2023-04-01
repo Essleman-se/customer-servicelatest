@@ -39,7 +39,6 @@ public class CustomerController {
 	
     @GetMapping(value = "/hellocustomer")
     public String hellowCustomer(){
-
         return "Hello Customers";
     }
     
@@ -48,9 +47,19 @@ public class CustomerController {
 
         return new ResponseEntity<String>("Success", HttpStatus.OK);
     }
+    
+    @PostMapping("/get/{id}")
+    public ResponseEntity<Customer> findById(@PathVariable(required = false) Integer id){
+        Optional<Customer> customer = customerService.getCustById(id);
+        if (!customer.isPresent()){
+            throw new ApiRequestException("Oops Customer NOT FOUND");
+        }
 
-    @PostMapping("get/{id}")
-    public ResponseEntity<Customer> findById(@PathVariable Integer id){
+        return new ResponseEntity(customer, HttpStatus.OK);
+    }
+    //RequestParam endpoint
+    @PostMapping("/get")
+    public ResponseEntity<Customer> findById2(@RequestParam Integer id){
         Optional<Customer> customer = customerService.getCustById(id);
         if (!customer.isPresent()){
             throw new ApiRequestException("Oops Customer NOT FOUND");
@@ -75,7 +84,7 @@ public class CustomerController {
     @PutMapping("/update")
     public ResponseEntity<?> updateCustomer(@RequestBody Customer customer){
 
-        log.info("CustemerService - update");
+        //log.info("CustemerService - update");
         if (customer.getId() == null) {
             throw new ApiRequestException("Oops Customer ID not found, ID is required for update the data");
         } else {

@@ -1,0 +1,74 @@
+[
+    {       
+        "custid": "08",
+        "fname": "Abinas",
+        "lname": "Yetwale",
+        "email": "Yetwale@micronet.com",
+        "mobile": "0000000",
+        "status": "Active King",
+        "category": "STD"
+    },
+    {   
+        "custid": "03",    
+        "fname": "Desail",
+        "lname": "Shegaw",       
+        "email": "Shegaw@micronet.com",
+        "mobile": "209687",
+        "status": "Active",
+        "category": "GD"
+    },
+    {       
+        "custid": "099",    
+        "fname": "Semir",
+        "lname": "Yesuf",
+        "email": "yesuf@micronet.co",
+        "mobile": "6641614",
+        "status": "Medium",
+        "category": "STD"
+    },
+    {
+        "custid": "055",    
+        "fname": "Esaina",
+        "lname": "Endeyu",
+        "email": "Endeyu@micronet.co",
+        "mobile": "593235",
+        "status": "Standard",
+        "category": "PLT"
+    },
+    {
+        "custid": "066",    
+        "fname": "Solo",
+        "lname": "Abegazu",
+        "email": "AbegazSol@micronet.co",
+        "mobile": "412144",
+        "status": "Great",
+        "category": "GD"
+    },
+    {
+        "custid": "077",    
+        "fname": "Sleshi",
+        "lname": "Alemayehu",
+        "email": "Alemayehu@micronet.co",
+        "mobile": "21111100",
+        "status": "Platinium",
+        "category": "STD"
+    },
+    {      
+	    "custid": "002",    
+        "fname": "Hailet",
+        "lname": "Brhane",
+        "email": "Almaz@micronet.co",
+        "mobile": "66455554",
+        "status": "Active",
+        "category": "GD"
+    },
+    {
+        "custid": "444",    
+        "fname": "Endeshaw",
+        "lname": "Abebe",
+        "email": "Endeshaw@micronet.co",
+        "mobile": "1100999",
+        "status": "Active",
+        "category": "GD"
+    }
+]

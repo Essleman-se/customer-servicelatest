@@ -20,11 +20,11 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
-	//@Column(name="cust_id")
+	@Column(name="COSTOMER_ID")
 	private String custid;
-	//@Column(name="f_name")
+	@Column(name="FIRST_NAME")
 	private String fname;
-	//@Column(name="l_name")
+	@Column(name="LAST_NAME")
 	private String lname;
 	private String email;
 	private String mobile;
